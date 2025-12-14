@@ -593,5 +593,7 @@ ENTRYPOINT ["./sagemaker-entrypoint.sh"]
 
 FROM vllm-openai-base AS vllm-openai
 
-ENTRYPOINT ["vllm", "serve"]
+# RUN python3 benchmarks/kernels/benchmark_moe.py --model zai-org/GLM-4.6-FP8 --save-dir /mnt/models/tuned --dtype fp8_w8a8  --tp-size 4 --tune
+# ENTRYPOINT ["vllm", "serve"]
+ENTRYPOINT ["/bin/bash"]
 #################### OPENAI API SERVER ####################
